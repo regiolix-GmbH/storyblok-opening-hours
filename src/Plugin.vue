@@ -12,7 +12,7 @@
         <li
           v-for="(time, timeIndex) in day.times"
           :key="timeIndex"
-          class="uk-flex uk-flex-middle"
+          class="OpeningHours__list-item uk-flex uk-flex-middle"
         >
           <input
             v-model="model.days[index].times[timeIndex].start"
@@ -31,6 +31,13 @@
           >
         </li>
       </ol>
+      <a
+        class="blok__full-btn uk-margin-small-top"
+        @click="addFields(index)"
+      >
+        <i class="uk-icon-plus-circle uk-margin-small-right"/>
+        Add fields
+      </a>
     </div>
   </div>
 </template>
@@ -48,6 +55,12 @@ export default {
     },
   },
   methods: {
+    addFields(index) {
+      this.model.days[index].times.push({
+        start: ``,
+        end: ``,
+      });
+    },
     initWith() {
       return {
         days: [
@@ -134,6 +147,10 @@ export default {
 
 .OpeningHours__list {
   padding-left: 0;
+}
+
+.OpeningHours__list-item + .OpeningHours__list-item {
+  margin-top: 5px;
 }
 
 .OpeningHours__separator {
