@@ -29,6 +29,13 @@
             class="uk-form-small uk-width-1-1"
             placeholder="18:00 or 6 PM"
           >
+          <a
+            class="assets__item-trash"
+            aria-label="Remove item"
+            @click="removeFields(index, timeIndex)"
+          >
+            <i class="uk-icon-minus-circle"/>
+          </a>
         </li>
       </ol>
       <a
@@ -60,6 +67,10 @@ export default {
         start: ``,
         end: ``,
       });
+    },
+    removeFields(dayIndex, timeIndex) {
+      this.model.days[dayIndex].times = this.model.days[dayIndex].times
+        .filter((_, i) => i !== timeIndex);
     },
     initWith() {
       return {
