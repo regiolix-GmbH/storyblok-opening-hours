@@ -7,6 +7,13 @@
     >
       <h4 class="OpeningHours__day-name">
         {{ day.name }}
+        <a
+          v-if="index !== 0"
+          aria-label="Copy from previous day"
+          @click="copyFromPreviousDay(index)"
+        >
+          <i class="uk-icon-copy"/>
+        </a>
       </h4>
       <ol class="OpeningHours__list uk-margin-top-remove uk-margin-bottom-remove">
         <li
@@ -71,6 +78,9 @@ export default {
     removeFields(dayIndex, timeIndex) {
       this.model.days[dayIndex].times = this.model.days[dayIndex].times
         .filter((_, i) => i !== timeIndex);
+    },
+    copyFromPreviousDay(index) {
+      this.model.days[index].times = this.model.days[index - 1].times;
     },
     initWith() {
       return {
@@ -153,7 +163,9 @@ export default {
 }
 
 .OpeningHours__day-name {
+  display: flex;
   margin-bottom: 5px;
+  justify-content: space-between;
 }
 
 .OpeningHours__list {
