@@ -80,7 +80,8 @@ export default {
         .filter((_, i) => i !== timeIndex);
     },
     copyFromPreviousDay(index) {
-      this.model.days[index].times = this.model.days[index - 1].times;
+      this.model.days[index].times = this.model.days[index - 1].times
+        .map(x => ({ start: x.start, end: x.end }));
     },
     initWith() {
       return {
