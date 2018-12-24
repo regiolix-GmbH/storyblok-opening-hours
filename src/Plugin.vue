@@ -88,66 +88,31 @@ export default {
         days: [
           {
             name: `Monday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Tuesday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Wednesday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Thursday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Friday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Saturday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
           {
             name: `Sunday`,
-            times: [
-              {
-                start: ``,
-                end: ``,
-              },
-            ],
+            times: [],
           },
         ],
         // This is the name of our plugin.
