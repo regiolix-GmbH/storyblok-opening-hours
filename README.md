@@ -8,16 +8,32 @@ Storyblok Opening Hours is a custom field type plugin for the headless CMS Story
 
 ### Deployment
 
-You can start by cloning this repository and then run the build command and copy and paste the generated code into Storyblok when it's done.
+You can start by cloning this repository and installing its dependencies.
 
 ```bash
 git clone git@github.com:maoberlehner/storyblok-opening-hours.git
 cd storyblok-opening-hours
 npm install
+```
+
+Because Storyblok plugins share a global namespace, you have to choose a distinct name for your plugin first. Go to `src/Plugin.vue` and change the following line of code.
+
+```diff
+         ],
+         // This is the name of our plugin.
+-        plugin: `opening-hours`,
++        plugin: `YOUR-DISTINCT-NAME`,
+       };
+     },
+```
+
+Now you can run the build command and copy and paste the generated code into Storyblok when it's done.
+
+```bash
 npm run build
 ```
 
-Next go to the [Plugins page](https://app.storyblok.com/#!/me/plugins) and click the `New` button in the top right. It is important to name your new custom field type plugin `opening-hours` for it to work. After creating a new plugin you can copy the contents of `dist/export.js` into the plugin editor.
+Next go to the [Plugins page](https://app.storyblok.com/#!/me/plugins) and click the `New` button in the top right. It is important to choose the same name you specified in the `initWith()` method for your plugin to work. After creating a new plugin you can copy the contents of `dist/export.js` into the plugin editor.
 
 ## Build Setup
 
