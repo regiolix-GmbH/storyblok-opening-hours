@@ -116,7 +116,7 @@ export default {
           },
         ],
         // This is the name of our plugin.
-        plugin: `opening-hours`,
+        plugin: `rxs-opening-hours`,
       };
     },
   },
